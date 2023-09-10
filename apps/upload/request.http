@@ -1,0 +1,29 @@
+#### Uploda file
+POST /upload HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+
+{
+    "fileId": "file_3"
+}
+
+### Get all files
+GET /upload HTTP/1.1
+Host: localhost:3000
+
+### Get file by id
+GET /upload/64fe078080cb95b9665682f8 HTTP/1.1
+Host: localhost:3000
+
+### Update file by id
+PATCH /upload/64fe078080cb95b9665682f8 HTTP/1.1
+Host: localhost:3000
+Content-Type: application/json
+
+{
+    "fileId": "file_3.4"
+}
+
+### Delete file by id
+DELETE /upload/64fe078080cb95b9665682f8 HTTP/1.1
+Host: localhost:3000
