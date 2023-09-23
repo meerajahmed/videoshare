@@ -12,7 +12,7 @@ GET /upload HTTP/1.1
 Host: localhost:3000
 
 ### Get file by id
-GET /upload/64fe078080cb95b9665682f8 HTTP/1.1
+GET /upload/64fe070e80cb95b9665682f4 HTTP/1.1
 Host: localhost:3000
 
 ### Update file by id
