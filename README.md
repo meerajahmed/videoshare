@@ -71,3 +71,49 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+## Build upload service
+
+```
+cd apps/upload
+docker build ../../ -f Dockerfile -t upload_tag_1
+```
+
+## Run upload service
+
+```
+docker run upload_tag_1
+```
+
+## Stoppig all docker containers
+
+```
+docker kill $(docker ps -q)
+```
+
+## Status
+
+```
+docker ps
+```
+
+## Run using docker compose
+
+```
+cd videoshare
+docker-compose up
+```
+
+Note: need to start docker daemon
+
+```
+# Start minikube
+minikube start
+
+# Tell Docker CLI to talk to minikube's VM
+eval $(minikube docker-env)
+
+# Save IP to a hostname
+echo "`minikube ip` docker.local" | sudo tee -a /etc/hosts > /dev/null
+
+```
