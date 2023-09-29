@@ -1,0 +1,19 @@
+### Create user
+POST /user HTTP/1.1
+Host: 192.168.64.5:3001
+Content-Type: application/json
+
+{
+    "email": "stephen22@yopmail.com",
+    "password": "Password@new1"
+}
+
+### Login user
+POST /auth/login HTTP/1.1
+Host: 192.168.64.5:3001
+Content-Type: application/json
+
+{
+    "email": "stephen22@yopmail.com",
+    "password": "Password@new1"
+}

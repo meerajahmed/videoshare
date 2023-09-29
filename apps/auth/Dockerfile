@@ -9,9 +9,9 @@ COPY nest-cli*.json ./
 RUN npm install
 
 COPY libs libs
-COPY apps/upload apps/upload
+COPY apps/auth apps/auth
 
-RUN npm run build upload
+RUN npm run build auth
 
 FROM node:18-alpine AS production
 
@@ -26,4 +26,4 @@ RUN npm install --prod
 
 COPY --from=development /usr/src/app/dist ./dist
 
-CMD ["node", "dist/apps/upload/main.js"]
+CMD ["node", "dist/apps/auth/main.js"]

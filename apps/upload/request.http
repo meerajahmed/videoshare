@@ -9,15 +9,17 @@ Content-Type: application/json
 
 ### Get all files
 GET /upload HTTP/1.1
-Host: localhost:3000
+#Host: localhost:3000
+Host: 192.168.64.5:3000
 
 ### Get file by id
 GET /upload/64fe070e80cb95b9665682f4 HTTP/1.1
-Host: localhost:3000
+#Host: localhost:3000
+Host: 192.168.64.5:3000
 
 ### Update file by id
 PATCH /upload/64fe078080cb95b9665682f8 HTTP/1.1
-Host: localhost:3000
+Host: 192.168.64.5:3000
 Content-Type: application/json
 
 {
@@ -26,4 +28,4 @@ Content-Type: application/json
 
 ### Delete file by id
 DELETE /upload/64fe078080cb95b9665682f8 HTTP/1.1
-Host: localhost:3000
+Host: 192.168.64.5:3000

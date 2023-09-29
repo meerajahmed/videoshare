@@ -72,11 +72,20 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 Nest is [MIT licensed](LICENSE).
 
+## Run upload service localy
+
+```
+npm run start:dev upload
+```
+
 ## Build upload service
 
 ```
 cd apps/upload
-docker build ../../ -f Dockerfile -t upload_tag_1
+docker build -f ./apps/upload/Dockerfile -t upload-developmen-t1 --target development .
+docker run -it upload-development-t1 sh
+docker image rm -f upload-development-t1
+
 ```
 
 ## Run upload service
@@ -102,6 +111,7 @@ docker ps
 ```
 cd videoshare
 docker-compose up
+docker-compose up --build
 ```
 
 Note: need to start docker daemon
@@ -115,5 +125,31 @@ eval $(minikube docker-env)
 
 # Save IP to a hostname
 echo "`minikube ip` docker.local" | sudo tee -a /etc/hosts > /dev/null
+
+# Stop minkube
+minikube stop
+
+```
+
+# mongo
+
+```
+start
+mongod --config /usr/local/etc/mongod.conf --fork
+
+status
+ps aux | grep mongod
+
+stop
+# lsof -i tcp:3000
+kill -9 <process_id>
+
+mongodb://localhost:27017
+
+Alternate option:
+mongod --dbpath=data/db
+
+
+docker-compose run upload ls /usr/src/app
 
 ```
