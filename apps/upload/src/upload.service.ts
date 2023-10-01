@@ -7,11 +7,11 @@ import { UploadRepository } from './upload.repository';
 export class UploadService {
   constructor(private readonly uploadRepository: UploadRepository) {}
 
-  create(createUploadDto: CreateUploadDto) {
+  create(createUploadDto: CreateUploadDto, userId: string) {
     return this.uploadRepository.create({
       ...createUploadDto,
       timestamp: new Date(),
-      userId: '1',
+      userId,
     });
   }
 

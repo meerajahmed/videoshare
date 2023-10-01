@@ -153,3 +153,7 @@ mongod --dbpath=data/db
 docker-compose run upload ls /usr/src/app
 
 ```
+
+Communicaton between different services using network protocol - TCP
+
+RPC calls - TCP message pattern
