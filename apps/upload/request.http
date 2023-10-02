@@ -4,10 +4,9 @@ Host: 192.168.64.5:3001
 Content-Type: application/json
 
 {
-    "email": "stephen23@yopmail.com",
+    "email": "stephen22@yopmail.com",
     "password": "Password@new1"
 }
-
 
 
 #### Uplod file
@@ -24,7 +23,7 @@ Cookie: Authentication=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTE2
 GET /upload HTTP/1.1
 #Host: localhost:3000
 Host: 192.168.64.5:3000
-Cookie: Authentication=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTE2YTFiMmFhYjQyZTM3MThiZTVkYTkiLCJpYXQiOjE2OTYwNzM4ODAsImV4cCI6MTY5NjA3NzQ4MH0.iy8sKQlGEQhw9XIqUdhOO9ficcNVxsYojhEdswZabsw
+# Cookie: Authentication=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTE2YTFiMmFhYjQyZTM3MThiZTVkYTkiLCJpYXQiOjE2OTYwNzM4ODAsImV4cCI6MTY5NjA3NzQ4MH0.iy8sKQlGEQhw9XIqUdhOO9ficcNVxsYojhEdswZabsw
 
 
 ### Get file by id

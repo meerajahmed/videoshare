@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: upload
+  name: upload
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: upload
+  template:
+    metadata:
+      labels:
+        app: upload
+    spec:
+      containers:
+        - image: image-upload
+          name: upload
+          env:
+            - name: MONGODB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: mongodb
+                  key: connectionString
+            - name: HTTP_PORT
+              value: '3000'
+            - name: AUTH_HOST
+              value: auth-tcp
+            - name: TCP_PORT
+              value: '3002'
+          ports:
+            - connectionPort: 3000

@@ -10,10 +10,10 @@ async function bootstrap() {
   const app = await NestFactory.create(AuthModule);
   const configService = app.get(ConfigService);
   app.connectMicroservice({
-    transport: Transport.TCP,
+    transport: Transport.RMQ,
     options: {
-      host: configService.get('AUTH_HOST'),
-      port: configService.get(`TCP_PORT`),
+      urls: [configService.getOrThrow('RABBITMQ_URI')],
+      queue: 'auth',
     },
   });
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));

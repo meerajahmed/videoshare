@@ -1,5 +1,10 @@
 import { Module } from '@nestjs/common';
-import { AUTH_SERVICE, DatabaseModule, LoggerModule } from '@app/common';
+import {
+  AUTH_SERVICE,
+  DatabaseModule,
+  HealthModule,
+  LoggerModule,
+} from '@app/common';
 import { UploadService } from './upload.service';
 import { UploadController } from './upload.controller';
 import { UploadRepository } from './upload.repository';
@@ -21,15 +26,16 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
       {
         name: AUTH_SERVICE,
         useFactory: (configService: ConfigService) => ({
-          transport: Transport.TCP,
+          transport: Transport.RMQ,
           options: {
-            host: configService.get('AUTH_HOST'),
-            port: configService.get('AUTH_PORT'),
+            urls: [configService.getOrThrow<string>('RABBITMQ_URI')],
+            queue: 'auth',
           },
         }),
         inject: [ConfigService],
       },
     ]),
+    HealthModule,
   ],
   controllers: [UploadController],
   providers: [UploadService, UploadRepository],

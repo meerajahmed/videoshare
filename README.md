@@ -157,3 +157,62 @@ docker-compose run upload ls /usr/src/app
 Communicaton between different services using network protocol - TCP
 
 RPC calls - TCP message pattern
+
+Event pattern - does not need to send response
+
+CI CD
+docker build -t upload -f . ../../
+
+push to docker hub
+
+### helm charts
+
+```
+kubectl get namespaces
+kubectl get po
+
+In k8s
+kubectl create deployment auth --image=image-id --dry-run=client -o yaml ? deployment.yaml
+
+cd videshare
+helm install videoshare .
+
+kubectl get po
+kubectl describe po container-id
+kubectl logs container-id
+
+
+helm upgrade videoshare .
+
+
+
+kubectl create secret generic mongodb --from-literal=connectionString=mongodb+srv://videoshare:<enter_pass>@videoshare.4ovyz65.mongodb.net
+
+kubectl get secrets
+
+kubectl get secret mongodb -o yaml
+
+
+helm upgread videoshare
+
+kubectl create service clusterip upload --tcp=3002 --dry-run=client -o yaml > service.yaml
+
+cd to k8s/videoshare
+helm upgrade videoshare .
+
+kubectl get svc
+
+AUTH deployment
+
+kubectl create secret generic jwt --from-literal=jwtSecret=jwt_secret_string
+
+heml upgrade videoshare .
+
+kubectl create service clusterip auth --tcp=3001,3002 --dry-run=client -o yaml > serivce.yaml
+
+
+UPLOAD deployment
+
+kubectl create service nodeport upload --tcp=3000 --dry-run=client -o yaml > service.yaml
+
+```
