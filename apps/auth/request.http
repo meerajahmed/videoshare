@@ -4,7 +4,7 @@ Host: 192.168.64.5:3001
 Content-Type: application/json
 
 {
-    "email": "stephen21@yopmail.com",
+    "email": "stephen18@yopmail.com",
     "password": "Password@new1"
 }
 
@@ -14,7 +14,7 @@ Host: 192.168.64.5:3001
 Content-Type: application/json
 
 {
-    "email": "stephen23@yopmail.com",
+    "email": "stephen18@yopmail.com",
     "password": "Password@new1"
 }
 

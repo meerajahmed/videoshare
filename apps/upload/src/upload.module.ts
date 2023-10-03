@@ -11,6 +11,12 @@ import { UploadRepository } from './upload.repository';
 import { UploadDocument, UploadSchema } from './models/upload.schema';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { GraphQLModule } from '@nestjs/graphql';
+import {
+  ApolloFederationDriver,
+  ApolloFederationDriverConfig,
+} from '@nestjs/apollo';
+import { UploadResolver } from './upload.resolver';
 
 @Module({
   imports: [
@@ -18,6 +24,12 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
     DatabaseModule.forFeature([
       { name: UploadDocument.name, schema: UploadSchema },
     ]),
+    GraphQLModule.forRoot<ApolloFederationDriverConfig>({
+      driver: ApolloFederationDriver,
+      autoSchemaFile: {
+        federation: 2,
+      },
+    }),
     LoggerModule,
     ConfigModule.forRoot({
       isGlobal: true,
@@ -38,6 +50,6 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
     HealthModule,
   ],
   controllers: [UploadController],
-  providers: [UploadService, UploadRepository],
+  providers: [UploadService, UploadRepository, UploadResolver],
 })
 export class UploadModule {}

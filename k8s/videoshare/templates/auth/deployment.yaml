@@ -15,7 +15,7 @@ spec:
         app: auth
     spec:
       containers:
-        - image: image-auth
+        - image: meerajahmed/videoshare-auth:latest
           name: auth
           env:
             - name: MONGODB_URI
@@ -29,11 +29,11 @@ spec:
                   name: jwt
                   key: jwtSecret
             - name: JWT_EXPIRATION
-              value: '3600'
+              value: '360'
             - name: HTTP_PORT
               value: '3001'
             - name: TCP_PORT
               value: '3002'
           ports:
-            - connectionPort: 3001
-            - connectionPort: 3002
+            - containerPort: 3001
+            - containerPort: 3002

@@ -4,7 +4,7 @@ Host: 192.168.64.5:3001
 Content-Type: application/json
 
 {
-    "email": "stephen22@yopmail.com",
+    "email": "stephen24@yopmail.com",
     "password": "Password@new1"
 }
 
@@ -13,10 +13,9 @@ Content-Type: application/json
 POST /upload HTTP/1.1
 Host: 192.168.64.5:3000
 Content-Type: application/json
-Cookie: Authentication=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTE2YTFiMmFhYjQyZTM3MThiZTVkYTkiLCJpYXQiOjE2OTYwNzQ0MTIsImV4cCI6MTY5NjA3ODAxMn0.eKZkca-1EvcC6VVk4Zo-VGeDin8zgJsPBaTNOoNlTsc
 
 {
-    "fileId": "file_1"
+    "fileId": "file_22"
 }
 
 ### Get all files

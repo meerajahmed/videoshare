@@ -181,10 +181,7 @@ kubectl get po
 kubectl describe po container-id
 kubectl logs container-id
 
-
 helm upgrade videoshare .
-
-
 
 kubectl create secret generic mongodb --from-literal=connectionString=mongodb+srv://videoshare:<enter_pass>@videoshare.4ovyz65.mongodb.net
 
@@ -215,4 +212,10 @@ UPLOAD deployment
 
 kubectl create service nodeport upload --tcp=3000 --dry-run=client -o yaml > service.yaml
 
+```
+
+```
+helm install videoshare .
+kubectl get pods
+kubectl describe po <pod_name>
 ```

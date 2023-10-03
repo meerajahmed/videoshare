@@ -15,7 +15,7 @@ spec:
         app: upload
     spec:
       containers:
-        - image: image-upload
+        - image: meerajahmed/videoshare-upload:latest
           name: upload
           env:
             - name: MONGODB_URI
@@ -30,4 +30,4 @@ spec:
             - name: TCP_PORT
               value: '3002'
           ports:
-            - connectionPort: 3000
+            - containerPort: 3000
